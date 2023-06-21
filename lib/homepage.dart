@@ -6,6 +6,7 @@ import 'package:netflix_app/provider/firstanimateprovider.dart';
 import 'package:netflix_app/provider/popularprovider.dart';
 import 'package:netflix_app/provider/seriesprovider.dart';
 import 'package:netflix_app/provider/trendingprovider.dart';
+import 'package:netflix_app/seeall/trending_seeall.dart';
 
 class Homepage extends ConsumerWidget {
   const Homepage({super.key});
@@ -119,7 +120,7 @@ class Homepage extends ConsumerWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () => moviesgrid(context, 0),
                       child: Text(
                         'See all',
                         style: TextStyle(
@@ -160,7 +161,7 @@ class Homepage extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child: const Row(
+                child:  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -172,11 +173,14 @@ class Homepage extends ConsumerWidget {
                         fontFamily: "Mukta",
                       ),
                     ),
-                    Text(
-                      'See all',
-                      style: TextStyle(
-                        color: Color.fromARGB(205, 175, 159, 159),
-                        fontSize: 14,
+                    InkWell(
+                      onTap: () => moviesgrid(context, 1),
+                      child: Text(
+                        'See all',
+                        style: TextStyle(
+                          color: Color.fromARGB(205, 175, 159, 159),
+                          fontSize: 14,
+                        ),
                       ),
                     )
                   ],
@@ -211,7 +215,7 @@ class Homepage extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child: const Row(
+                child:  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -223,11 +227,14 @@ class Homepage extends ConsumerWidget {
                         fontFamily: "Mukta",
                       ),
                     ),
-                    Text(
-                      'See all',
-                      style: TextStyle(
-                        color: Color.fromARGB(205, 175, 159, 159),
-                        fontSize: 14,
+                    InkWell(
+                       onTap: () => moviesgrid(context, 2),
+                      child: Text(
+                        'See all',
+                        style: TextStyle(
+                          color: Color.fromARGB(205, 175, 159, 159),
+                          fontSize: 14,
+                        ),
                       ),
                     )
                   ],
@@ -262,7 +269,7 @@ class Homepage extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child: const Row(
+                child:  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -274,11 +281,14 @@ class Homepage extends ConsumerWidget {
                         fontFamily: "Mukta",
                       ),
                     ),
-                    Text(
-                      'See all',
-                      style: TextStyle(
-                        color: Color.fromARGB(205, 175, 159, 159),
-                        fontSize: 14,
+                    InkWell(
+                       onTap: () => moviesgrid(context, 3),
+                      child: Text(
+                        'See all',
+                        style: TextStyle(
+                          color: Color.fromARGB(205, 175, 159, 159),
+                          fontSize: 14,
+                        ),
                       ),
                     )
                   ],
@@ -314,5 +324,11 @@ class Homepage extends ConsumerWidget {
         ),
       ),
     );
+  }
+
+
+  void moviesgrid (BuildContext context, int index){
+    Navigator.push(context, MaterialPageRoute(builder: 
+  (context) => Trending(ind: index,),));
   }
 }
