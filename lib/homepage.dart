@@ -29,9 +29,9 @@ class Homepage extends ConsumerWidget {
         ),
         title: Center(
           child: Text(
-            'ANSIF NOUSHAD',
+            'Flickzilla Movies',
             style: TextStyle(
-                color: Color.fromARGB(255, 216, 6, 6),
+                color: Color.fromARGB(118, 181, 172, 172),
                 fontSize: 30,
                 fontWeight: FontWeight.w500,
                 fontFamily: "Mukta"),
