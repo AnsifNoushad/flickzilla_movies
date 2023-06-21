@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/loginpage.dart';
 import 'package:netflix_app/sign_up_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -24,13 +23,9 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           Center(
             child: Container(
-              height: 200,
-              width: 100,
-
-              // width: MediaQuery.of(context).size.width,
-              // height: MediaQuery.of(context).size.height,
-              child: Image.network(
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Netflix_2015_N_logo.svg/1200px-Netflix_2015_N_logo.svg.png',
+              
+              child: Image.asset(
+                'assets/animateimage/Black and White Bold Typographic Gym Health and Fitness Animated Logo.gif',
                 fit: BoxFit.cover,
               ),
             ),

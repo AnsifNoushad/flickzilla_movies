@@ -5,7 +5,7 @@ final animateprovider = Provider<List<Newmodels>>((ref) => [
       Newmodels(
           images: "assets/animateimage/poster.jpg",
           name: "Jawan",
-          description: "/Animation/Triller/Drama",
+          description: "Animation/Triller/Drama",
           rating: 4.9),
       Newmodels(
         images:

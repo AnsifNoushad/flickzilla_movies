@@ -11,6 +11,7 @@ class SignUpPage extends StatelessWidget {
     double sh = (MediaQuery.of(context).size.height);
     double sw = (MediaQuery.of(context).size.width);
     return Scaffold(
+      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -21,12 +22,9 @@ class SignUpPage extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.4,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: NetworkImage(
-                            'https://wallpapercave.com/wp/wp2383818.jpg'),
+                        image: AssetImage(
+                            'assets/animateimage/Black_and_White_Bold_Typographic_Gym_Health_and_Fitness_Animated_Logo-removebg-preview.png'),
                         fit: BoxFit.cover),
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(60),
-                    ),
                   ),
                   child: Container(
                     margin: EdgeInsets.only(
@@ -53,7 +51,7 @@ class SignUpPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 decoration: InputDecoration(
-                    labelText: 'Enter your username',
+                    labelText: 'Enter Your Username',
                     border: OutlineInputBorder(
                         borderSide: BorderSide(
                             width: 1,
@@ -66,7 +64,7 @@ class SignUpPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 decoration: InputDecoration(
-                    labelText: 'Enter your Email',
+                    labelText: 'Enter Your Email',
                     border: OutlineInputBorder(
                         borderSide: BorderSide(
                             width: 1,
@@ -79,7 +77,7 @@ class SignUpPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: TextField(
                 decoration: InputDecoration(
-                    labelText: 'Enter your Password',
+                    labelText: 'Enter Your Password',
                     border: OutlineInputBorder(
                         borderSide: BorderSide(
                             width: 1,
@@ -126,7 +124,7 @@ class SignUpPage extends StatelessWidget {
                 width: sw * (210 / Responsive.width),
                 height: sh * (60 / Responsive.height),
                 decoration: BoxDecoration(
-                    color: Colors.black,
+                    color: Color.fromARGB(78, 255, 255, 255),
                     borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Center(
                   child: Text(
@@ -167,7 +165,7 @@ class SignUpPage extends StatelessWidget {
                       child: Text(
                         "  Log'In",
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Color.fromARGB(255, 243, 236, 236),
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                         ),

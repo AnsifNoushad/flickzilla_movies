@@ -10,20 +10,16 @@ class Loginpage extends StatelessWidget {
     double sh = (MediaQuery.of(context).size.height);
     double sw = (MediaQuery.of(context).size.width);
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
-          Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              child: Image.network(
-                'https://img.freepik.com/free-photo/movie-background-collage_23-2149876015.jpg',
-                fit: BoxFit.cover,
-              )),
           Column(
             children: [
+              Image.asset(
+                  "assets/animateimage/Black_and_White_Bold_Typographic_Gym_Health_and_Fitness_Animated_Logo-removebg-preview.png"),
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 300,
+                  // top: 300,
                   left: 10,
                   right: 10,
                 ),
@@ -42,7 +38,7 @@ class Loginpage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -98,7 +94,7 @@ class Loginpage extends StatelessWidget {
                   width: sw * (210 / Responsive.width),
                   height: sh * (60 / Responsive.height),
                   decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: Color.fromARGB(78, 255, 255, 255),
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: Center(
                     child: Text(

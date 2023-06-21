@@ -18,8 +18,11 @@ class Homepage extends ConsumerWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         leading: Container(
-          height: 20,
-          width: 20,
+          margin: EdgeInsets.only(
+            left: 20,
+            bottom: 10,
+            top: 10,
+          ),
           decoration: const BoxDecoration(
             color: Color.fromARGB(127, 196, 184, 184),
             borderRadius: BorderRadius.all(Radius.circular(40)),
@@ -41,15 +44,19 @@ class Homepage extends ConsumerWidget {
         ),
         actions: [
           Container(
-            height: 55,
-            width: 55,
+            margin: EdgeInsets.only(
+              right: 20,
+            ),
+            height: 37,
+            width: 37,
             decoration: const BoxDecoration(
                 color: Color.fromARGB(128, 203, 190, 190),
                 borderRadius: BorderRadius.all(Radius.circular(50))),
             child: const Icon(
               Icons.search,
-              size: 40,
+              size: 20,
               color: Colors.white,
+              
             ),
           ),
         ],
@@ -69,7 +76,8 @@ class Homepage extends ConsumerWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         InkWell(
-                          onTap: () => detailfunction(context, animateprovider, index),
+                          onTap: () =>
+                              detailfunction(context, animateprovider, index),
                           child: Container(
                             height: 400,
                             decoration: BoxDecoration(
@@ -83,9 +91,17 @@ class Homepage extends ConsumerWidget {
                           ),
                         ),
                         Text(
+                          ref.watch(animateprovider)[index].name,
+                          style: TextStyle(
+                            color: const Color.fromARGB(255, 185, 3, 3),
+                            fontFamily: "Mukta",
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
                           ref.watch(animateprovider)[index].rating.toString(),
                           style: TextStyle(
-                              color: Colors.white,
+                              color: const Color.fromARGB(255, 195, 8, 8),
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                               fontFamily: "Mukta"),
@@ -144,7 +160,8 @@ class Homepage extends ConsumerWidget {
                 itemCount: ref.watch(trendingprovider).length,
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: () => detailfunction(context, trendingprovider, index),
+                    onTap: () =>
+                        detailfunction(context, trendingprovider, index),
                     child: Container(
                       height: 180,
                       width: 130,
@@ -168,7 +185,7 @@ class Homepage extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child:  Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -201,7 +218,8 @@ class Homepage extends ConsumerWidget {
                 itemCount: ref.watch(popularprovider).length,
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: () => detailfunction(context, popularprovider, index),
+                    onTap: () =>
+                        detailfunction(context, popularprovider, index),
                     child: Container(
                       height: 180,
                       width: 130,
@@ -225,7 +243,7 @@ class Homepage extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child:  Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -238,7 +256,7 @@ class Homepage extends ConsumerWidget {
                       ),
                     ),
                     InkWell(
-                       onTap: () => moviesgrid(context, 2),
+                      onTap: () => moviesgrid(context, 2),
                       child: Text(
                         'See all',
                         style: TextStyle(
@@ -265,8 +283,8 @@ class Homepage extends ConsumerWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
-                          image:
-                              AssetImage(ref.watch(seriesprovider)[index].images),
+                          image: AssetImage(
+                              ref.watch(seriesprovider)[index].images),
                         ),
                       ),
                     ),
@@ -282,7 +300,7 @@ class Homepage extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child:  Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -295,7 +313,7 @@ class Homepage extends ConsumerWidget {
                       ),
                     ),
                     InkWell(
-                       onTap: () => moviesgrid(context, 3),
+                      onTap: () => moviesgrid(context, 3),
                       child: Text(
                         'See all',
                         style: TextStyle(
@@ -322,8 +340,8 @@ class Homepage extends ConsumerWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
-                          image:
-                              AssetImage(ref.watch(dramaprovider)[index].images),
+                          image: AssetImage(
+                              ref.watch(dramaprovider)[index].images),
                         ),
                       ),
                     ),
@@ -342,9 +360,13 @@ class Homepage extends ConsumerWidget {
     );
   }
 
-
-  void moviesgrid (BuildContext context, int index){
-    Navigator.push(context, MaterialPageRoute(builder: 
-  (context) => Trending(ind: index,),));
+  void moviesgrid(BuildContext context, int index) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Trending(
+            ind: index,
+          ),
+        ));
   }
 }
