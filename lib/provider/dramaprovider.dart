@@ -5,7 +5,7 @@ final dramaprovider = Provider<List<Newmodels>>((ref) => [
       Newmodels(
           images: "assets/drama/51F-lOi11dL._AC_UF894,1000_QL80_.jpg",
           name: "Titanic",
-          description: "Romantic/Animation/Triller/Drama",
+          description: "Romantic/Animation//Drama",
           rating: 4.9),
       Newmodels(
         images: "assets/drama/download.jpeg",

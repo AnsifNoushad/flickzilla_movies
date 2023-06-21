@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:netflix_app/detailpage/dtailpage_function.dart';
 import 'package:netflix_app/provider/dramaprovider.dart';
 import 'package:netflix_app/provider/firstanimateprovider.dart';
 import 'package:netflix_app/provider/popularprovider.dart';
@@ -67,16 +68,19 @@ class Homepage extends ConsumerWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Container(
-                          height: 400,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                    ref.watch(animateprovider)[index].images,
-                                  ),
-                                  fit: BoxFit.cover),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15))),
+                        InkWell(
+                          onTap: () => detailfunction(context, animateprovider, index),
+                          child: Container(
+                            height: 400,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                      ref.watch(animateprovider)[index].images,
+                                    ),
+                                    fit: BoxFit.cover),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15))),
+                          ),
                         ),
                         Text(
                           ref.watch(animateprovider)[index].rating.toString(),
@@ -139,14 +143,17 @@ class Homepage extends ConsumerWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: ref.watch(trendingprovider).length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    height: 180,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image: AssetImage(
-                            ref.watch(trendingprovider)[index].images),
+                  return InkWell(
+                    onTap: () => detailfunction(context, trendingprovider, index),
+                    child: Container(
+                      height: 180,
+                      width: 130,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: AssetImage(
+                              ref.watch(trendingprovider)[index].images),
+                        ),
                       ),
                     ),
                   );
@@ -193,14 +200,17 @@ class Homepage extends ConsumerWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: ref.watch(popularprovider).length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    height: 180,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image: AssetImage(
-                            ref.watch(popularprovider)[index].images),
+                  return InkWell(
+                    onTap: () => detailfunction(context, popularprovider, index),
+                    child: Container(
+                      height: 180,
+                      width: 130,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: AssetImage(
+                              ref.watch(popularprovider)[index].images),
+                        ),
                       ),
                     ),
                   );
@@ -247,14 +257,17 @@ class Homepage extends ConsumerWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: ref.watch(seriesprovider).length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    height: 180,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image:
-                            AssetImage(ref.watch(seriesprovider)[index].images),
+                  return InkWell(
+                    onTap: () => detailfunction(context, seriesprovider, index),
+                    child: Container(
+                      height: 180,
+                      width: 130,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image:
+                              AssetImage(ref.watch(seriesprovider)[index].images),
+                        ),
                       ),
                     ),
                   );
@@ -301,14 +314,17 @@ class Homepage extends ConsumerWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: ref.watch(dramaprovider).length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    height: 180,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image:
-                            AssetImage(ref.watch(dramaprovider)[index].images),
+                  return InkWell(
+                    onTap: () => detailfunction(context, dramaprovider, index),
+                    child: Container(
+                      height: 180,
+                      width: 130,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image:
+                              AssetImage(ref.watch(dramaprovider)[index].images),
+                        ),
                       ),
                     ),
                   );

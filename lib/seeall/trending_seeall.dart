@@ -23,7 +23,9 @@ class Trending extends ConsumerWidget {
     ];
 
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         centerTitle: true,
         title: Text(
           ind == 0
@@ -33,7 +35,10 @@ class Trending extends ConsumerWidget {
                   : ind == 2
                       ? "Series"
                       : "Drama",
-          style: TextStyle(fontFamily: "Mukta"),
+          style: TextStyle(
+            fontFamily: "Mukta",
+            color: Colors.white,
+          ),
         ),
       ),
       body: Padding(

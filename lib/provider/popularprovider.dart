@@ -29,7 +29,7 @@ final popularprovider = Provider<List<Newmodels>>((ref) => [
       Newmodels(
         images: "assets/image/Homealone.jpg",
         name: "Home Alone",
-        description: "Comedy/Drama",
+        description: "Comedy/Drama/Triller",
         rating: 4.7,
       ),
     ]);
